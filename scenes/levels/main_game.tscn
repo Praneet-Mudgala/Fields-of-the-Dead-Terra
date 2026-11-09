@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh5d1mfptlkd0"]
+
+[ext_resource type="PackedScene" uid="uid://issnvvij7vo" path="res://scenes/levels/background.tscn" id="1_mcewg"]
+[ext_resource type="PackedScene" uid="uid://4g8u3vhaq6wi" path="res://scenes/actors/player.tscn" id="2_valbi"]
+[ext_resource type="PackedScene" uid="uid://b2trsqmif6dvf" path="res://scenes/actors/enemy_spawner.tscn" id="3_viahy"]
+[ext_resource type="PackedScene" uid="uid://3xmvhacs7lo4" path="res://scenes/hud.tscn" id="4_3bnjd"]
+[ext_resource type="Script" uid="uid://bdv4ldod2pjc5" path="res://scenes/levels/camera_2d.gd" id="5_p85sk"]
+
+[node name="Main_game" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_mcewg")]
+
+[node name="Player" parent="." instance=ExtResource("2_valbi")]
+position = Vector2(320, 180)
+
+[node name="Enemy_Spawner" parent="." instance=ExtResource("3_viahy")]
+visible = false
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_3bnjd")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+script = ExtResource("5_p85sk")

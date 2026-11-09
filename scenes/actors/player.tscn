@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://4g8u3vhaq6wi"]
+
+[ext_resource type="Script" uid="uid://8biakc3w4non" path="res://scenes/actors/player.gd" id="1_7860b"]
+[ext_resource type="Texture2D" uid="uid://dr0ho4qybxcnj" path="res://assets/art/damage.png" id="1_frfce"]
+[ext_resource type="Texture2D" uid="uid://tdilo2tbccun" path="res://assets/art/death.png" id="2_1ty3f"]
+[ext_resource type="Texture2D" uid="uid://d1e3mn40o7tga" path="res://assets/art/idle1.png" id="3_tucvp"]
+[ext_resource type="Texture2D" uid="uid://c28nb8hx4bul4" path="res://assets/art/idle2.png" id="4_cs8je"]
+[ext_resource type="Texture2D" uid="uid://b0qskbj31c8qa" path="res://assets/art/walk1.png" id="5_8ye0v"]
+[ext_resource type="Texture2D" uid="uid://ba0x3uer8w0wn" path="res://assets/art/walk2.png" id="6_3pjju"]
+[ext_resource type="Texture2D" uid="uid://c8w2mcijkqmq5" path="res://assets/art/Wand.png" id="8_xx81n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1mvs"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("1_frfce")
+}],
+"loop": false,
+"name": &"Damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ty3f")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_tucvp")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_cs8je")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8ye0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3pjju")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_7860b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.1920929e-07, 5.684342e-14)
+sprite_frames = SubResource("SpriteFrames_o1mvs")
+animation = &"Damage"
+autoplay = "Idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-49.999996, -41.25)
+polygon = PackedVector2Array(48, 14, 61, 16, 70, 26, 77, 43, 79, 58, 73, 65, 52, 67, 30, 65, 23, 60, 24, 43, 30, 25, 39, 17)
+
+[node name="WeaponPivot" type="Node2D" parent="."]
+
+[node name="Gun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(34, 0)
+rotation = 1.5707964
+texture = ExtResource("8_xx81n")
+
+[node name="Tip" type="Marker2D" parent="WeaponPivot/Gun"]
+position = Vector2(-0.05, -4.5)
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true

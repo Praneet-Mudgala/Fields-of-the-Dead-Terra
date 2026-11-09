@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://issnvvij7vo"]
+
+[ext_resource type="Texture2D" uid="uid://dwujk7icaqxfx" path="res://assets/art/background.png" id="1_x0pi7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pi7"]
+size = Vector2(4, 380)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6hs5"]
+size = Vector2(4, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iwx2"]
+size = Vector2(661, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0np"]
+size = Vector2(660, 5)
+
+[node name="Background" type="TextureRect"]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_x0pi7")
+
+[node name="Boundaries" type="StaticBody2D" parent="."]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(-1, 178)
+shape = SubResource("RectangleShape2D_x0pi7")
+
+[node name="RightWall" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(641, 181)
+shape = SubResource("RectangleShape2D_h6hs5")
+
+[node name="TopWall" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(322, -1)
+shape = SubResource("RectangleShape2D_1iwx2")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(318, 361)
+shape = SubResource("RectangleShape2D_4r0np")

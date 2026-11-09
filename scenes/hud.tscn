@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://3xmvhacs7lo4"]
+
+[ext_resource type="Script" uid="uid://cqtdcnbupoam6" path="res://scenes/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="Theme" id="Theme_oo0fn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.49834222, 0.55486596, 0.9812264, 1)
+
+[node name="HUD" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahhtf")
+
+[node name="LifeLabel" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Lives:"
+
+[node name="KillsLabel" type="Label" parent="."]
+layout_mode = 1
+offset_top = 17.0
+offset_right = 44.0
+offset_bottom = 40.0
+text = "Kills:"
+
+[node name="GameOverPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 150.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_top = 3.0
+offset_right = 66.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "The child is dead."
+
+[node name="ScoreLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -64.5
+offset_right = 107.0
+offset_bottom = -15.5
+grow_vertical = 2
+text = "Kills this round: 0
+High score: 0"
+
+[node name="RestartButton" type="Button" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -58.0
+offset_right = 32.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_oo0fn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ysmq")
+text = "Restart"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwuiif0jhrsdg"]
+
+[ext_resource type="Script" uid="uid://gnbacfnqlkht" path="res://scenes/actors/bullet.gd" id="1_8fodj"]
+[ext_resource type="Texture2D" uid="uid://d35n6p7utsdnv" path="res://assets/art/attack.png" id="2_xp2cc"]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_8fodj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xp2cc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 6)
+polygon = PackedVector2Array(1, -18, 9, -12, 3, -4, 1, -8, -3, -4, -8, -13)

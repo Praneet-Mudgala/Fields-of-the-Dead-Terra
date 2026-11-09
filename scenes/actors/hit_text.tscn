@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dw7hm3y31kp7e"]
+
+[node name="HitText" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "-1"

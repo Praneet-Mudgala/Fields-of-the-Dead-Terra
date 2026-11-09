@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxob4cp2ig045"]
+
+[ext_resource type="Script" uid="uid://cf1urh7d8fja1" path="res://spectre.gd" id="1_08vui"]
+[ext_resource type="Texture2D" uid="uid://bk31h1spbeq3s" path="res://assets/art/enemy2 death.png" id="1_e1osy"]
+[ext_resource type="Texture2D" uid="uid://bbxl4j2b68d3h" path="res://assets/art/enemy2.png" id="2_08vui"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llpf2"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": ExtResource("1_e1osy")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_08vui")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Spectre" type="Area2D"]
+script = ExtResource("1_08vui")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_llpf2")
+animation = &"Death"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-41, -9)
+polygon = PackedVector2Array(51, -13, 34, -16, 23, -12, 19, -3, 20, 17, 25, 30, 40, 28, 47, 30, 51, 27, 55, 30, 56, 24, 57, -6)
