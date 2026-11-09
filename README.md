@@ -1,2 +1,7 @@
 # Fields-of-the-Dead-Terra
-Submission for Terra Week 3. An arena shooter.
+Fields of the Dead is my submission for Terra Week 3. It is a fast paced survival game where a child on Halloween night steps into a strange portal into the Fields of the Dead, where he is attacked by evil spectres and pyres and needs to defend himself with his wand or risk becoming a ghost himself... Controls are explained ingame!
+
+## How to play
+* Press this link made on Github Pages: https://praneet-mudgala.github.io/Fields-of-the-Dead-Terra/
+* Press space to advance the story and follow along in game.
+* Have fun!
