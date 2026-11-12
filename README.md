@@ -21,6 +21,8 @@ The main features of this game are:
 * The lasting high score system that saves your best run locally so that you can try and beat it
 * Custom pixel art that I made myself for this game
 
+I was inspired to build this game by the game Brotato, which is a roguelike wave spawning survival game. I wanted to add buffs like in Brotato, but I didn't have the skill to code it, so I built this instead.
+
 ## Running the source code locally
 If you want to explore the project files or modify the game:
 1. Clone or download this repo to your computer
